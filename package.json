@@ -1,0 +1,54 @@
+{
+  "name": "jsonapi-store-elasticsearch",
+  "version": "0.0.1",
+  "description": "Elasticsearch data store for jsonapi-server.",
+  "keywords": [
+    "json:api",
+    "jsonapi",
+    "persistence",
+    "store",
+    "elasticsearch"
+  ],
+  "main": "lib/elasticsearchHandler.js",
+  "author": "Duncan Fenning",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holidayextras/jsonapi-store-elasticsearch.git"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "async": "1.5.0",
+    "elasticsearch": "10.0.0"
+  },
+  "devDependencies": {
+    "mocha": "2.2.5",
+    "eslint": "0.24.1",
+    "blanket": "1.1.7",
+    "mocha-lcov-reporter": "0.0.2",
+    "coveralls": "2.11.2",
+    "plato": "1.5.0",
+    "mocha-performance": "0.1.0",
+    "jsonapi-server": "0.16.0"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --timeout 20000 -R spec ./test/*.js",
+    "start": "node example/server.js",
+    "coveralls": "./node_modules/mocha/bin/mocha --require blanket --reporter mocha-lcov-reporter ./test/*.js | ./node_modules/coveralls/bin/coveralls.js",
+    "coverage": "./node_modules/mocha/bin/mocha --timeout 20000 --require blanket --reporter html-cov ./test/*.js > coverage.html",
+    "complexity": "./node_modules/plato/bin/plato -r -d complexity lib",
+    "performance": "node --allow-natives-syntax --harmony ./node_modules/mocha/bin/_mocha --reporter mocha-performance ./test/*.js",
+    "lint": "./node_modules/.bin/eslint ./example/*.js ./lib/* ./test/*.js --quiet && echo '✔ All good!'"
+  },
+  "config": {
+    "blanket": {
+      "pattern": ".js",
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ]
+    }
+  }
+}
