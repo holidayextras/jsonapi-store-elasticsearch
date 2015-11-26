@@ -8,3 +8,7 @@ env:
     - TEST_STEP=test
 notifications:
   email: false
+services:
+  - elasticsearch
+before_script:
+  - sleep 10
