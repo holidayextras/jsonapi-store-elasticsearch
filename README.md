@@ -7,6 +7,8 @@
 
 # jsonapi-store-elasticsearch
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/holidayextras/jsonapi-store-elasticsearch.svg)](https://greenkeeper.io/)
+
 `jsonapi-server-elasticsearch` is a Elasticsearch backed data store for [`jsonapi-server`](https://github.com/holidayextras/jsonapi-server).
 
 This project conforms to the specification laid out in the [jsonapi-server handler documentation](https://github.com/holidayextras/jsonapi-server/blob/master/documentation/handlers.md).
